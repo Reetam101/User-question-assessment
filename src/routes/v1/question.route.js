@@ -30,7 +30,11 @@ router.post(
 );
 router.get("/by-category", questionController.getQuestionsByCategory);
 // router.get('/details', questionController.getQuestion)
-// router.post('/create-question',  passport.authenticate("jwt", { session: false }),
-// auth("admin"), questionController.createAQuestion)
+router.post(
+  "/create-question",
+  passport.authenticate("jwt", { session: false }),
+  auth("admin"),
+  questionController.createAQuestion
+);
 
 module.exports = router;
